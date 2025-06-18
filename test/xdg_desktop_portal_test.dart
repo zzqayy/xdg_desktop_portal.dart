@@ -3098,4 +3098,26 @@ void main() {
 
     expect(await client.wallpaper.getVersion(), equals(1));
   });
+
+  test('screenshot', () async {
+    var server = DBusServer();
+    var clientAddress =
+    await server.listenAddress(DBusAddress.unix(dir: Directory.systemTemp));
+    addTearDown(() async {
+      await server.close();
+    });
+
+    var portalServer = MockPortalDesktopServer(clientAddress, settingsValues: {
+      'com.example.test': {'name': DBusString('Fred')}
+    });
+    await portalServer.start();
+    addTearDown(() async {
+      await portalServer.close();
+    });
+
+    var client = XdgDesktopPortalClient(bus: DBusClient(clientAddress));
+    final screenshot = await client.screenshot.screenshot(interactive: true);
+    print(screenshot.uri);
+    expect(screenshot.uri, isNotEmpty);
+  });
 }
