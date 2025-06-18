@@ -24,6 +24,7 @@ import 'xdg_secret_portal.dart';
 import 'xdg_settings_portal.dart';
 import 'xdg_trash_portal.dart';
 import 'xdg_wallpaper_portal.dart';
+import 'xdg_screenshot_portal.dart';
 
 /// A client that connects to the portals.
 class XdgDesktopPortalClient {

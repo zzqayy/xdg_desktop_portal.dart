@@ -1,8 +1,7 @@
 import 'dart:async';
-import 'dart:io';
 
 import 'package:dbus/dbus.dart';
-import 'package:xdg_desktop_portal/src/xdg_portal_request.dart';
+import 'xdg_portal_request.dart';
 
 /// Portal to perform screen casts.
 class XdgScreenshotPortal {
