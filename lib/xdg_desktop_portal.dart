@@ -20,3 +20,4 @@ export 'src/xdg_secret_portal.dart';
 export 'src/xdg_settings_portal.dart';
 export 'src/xdg_trash_portal.dart';
 export 'src/xdg_wallpaper_portal.dart';
+export 'src/xdg_screenshot_portal.dart';

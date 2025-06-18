@@ -97,6 +97,9 @@ class XdgDesktopPortalClient {
   /// Portal for setting the desktop wallpaper.
   late final XdgWallpaperPortal wallpaper;
 
+  /// Portal For screenshot
+  late final XdgScreenshotPortal screenshot;
+
   /// Keep track of used request/session tokens.
   final _usedTokens = <String>{};
 
@@ -131,6 +134,7 @@ class XdgDesktopPortalClient {
     settings = XdgSettingsPortal(_desktopObject);
     trash = XdgTrashPortal(_desktopObject);
     wallpaper = XdgWallpaperPortal(_desktopObject);
+    screenshot = XdgScreenshotPortal(_desktopObject, _generateToken);
   }
 
   /// Terminates all active connections. If a client remains unclosed, the Dart process may not terminate.
